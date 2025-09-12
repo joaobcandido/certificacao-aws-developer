@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards: Preparação para Certificação AWS Developer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+
+        .flashcard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .flashcard {
+            background-color: transparent;
+            /* Aumenta o tamanho em 30% */
+            width: 416px; /* 320px * 1.3 = 416px */
+            height: 260px; /* 200px * 1.3 = 260px */
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .flashcard-inner, .flashcard-front, .flashcard-back {
+            box-sizing: border-box;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #dcdfe4;
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: #2c3e50;
+        }
+
+        .flashcard-back {
+            background-color: #3498db;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front h3, .flashcard-back h3 {
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+
+        /* Labels */
+        .flashcard-front::before {
+            content: 'FRENTE';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.75rem;
+            color: #bdc3c7;
+            font-weight: bold;
+        }
+
+        .flashcard-back::before {
+            content: 'VERSO';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.75rem;
+            color: #ecf0f1;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flashcards: Preparação para Certificação AWS Developer</h1>
+        <p class="subtitle">Passe o mouse sobre um cartão para virá-lo e ver a resposta.</p>
+
+        <div class="flashcard-container">
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>O principal problema que o Exponential Backoff com Jitter resolve em tentativas de repetição de falha.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Resolve o 'thundering herd problem' ao adicionar aleatoriedade aos intervalos entre as novas tentativas. Isso evita que todos os clientes tentem novamente ao mesmo tempo, sobrecarregando o serviço de destino.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Armazenamento efêmero disponível para uma função AWS Lambda.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>O diretório `/tmp`. Ele é um armazenamento temporário e efêmero que pode ser usado para arquivos de até 10 GB durante a execução da função.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A operação mais eficiente do DynamoDB para buscar itens pela chave de partição.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>A operação `Query`. Ela é otimizada para buscar itens usando a chave primária (chave de partição ou ambas, se houver uma chave de ordenação), tornando-a mais rápida e barata que um `Scan`.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A estratégia de cache do ElastiCache que garante que o cache seja atualizado simultaneamente com o banco de dados principal.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Write-Through. Cada gravação no banco de dados é imediatamente refletida no cache, garantindo alta consistência.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A principal função de um Amazon Cognito User Pool.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Autenticação. Ele atua como um diretório de usuários para gerenciar a autenticação e o login dos usuários de uma aplicação (quem o usuário é).</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A principal função de um Amazon Cognito Identity Pool.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Autorização. Ele fornece credenciais temporárias da AWS para que os usuários autenticados possam acessar outros serviços da AWS (o que o usuário pode fazer).</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Prática recomendada pela AWS para armazenar credenciais sensíveis, como senhas de banco de dados.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Usar o AWS Systems Manager (SSM) Parameter Store com o tipo `SecureString`. Ele armazena as informações de forma criptografada usando o KMS.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A ferramenta da AWS que simplifica a definição de infraestrutura serverless (Lambda, API Gateway, DynamoDB) usando uma sintaxe abreviada.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>AWS Serverless Application Model (SAM). É uma extensão do CloudFormation focada em aplicações serverless.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A funcionalidade do CloudFormation que identifica quando os recursos de uma pilha foram alterados manualmente fora do template.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Drift Detection (Detecção de Desvio). Ela detecta 'desvios' entre o estado real dos recursos e a configuração definida no template do CloudFormation.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Serviço da AWS usado para rastreamento de ponta a ponta de requisições em uma aplicação distribuída.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>AWS X-Ray. Ele fornece um mapa de serviços e rastreamentos detalhados para ajudar a identificar gargalos e latência.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>O parâmetro de configuração do SQS que permite que um consumidor espere por uma mensagem, reduzindo o custo e o número de chamadas de API vazias.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>`MessageWaitTimeSeconds`. Um valor maior que zero habilita o 'long polling', onde a chamada de `ReceiveMessage` espera por mensagens antes de retornar.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>A principal diferença entre SQS Standard e SQS FIFO.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>SQS FIFO garante a ordem de entrega das mensagens (primeiro a entrar, primeiro a sair) e o processamento 'exactly-once'. SQS Standard não garante a ordem e pode ter duplicações.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>O que é uma DLQ no SQS e qual o seu propósito?</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>DLQ (Dead-Letter Queue) é uma fila para onde as mensagens são enviadas depois de falharem no processamento um número configurável de vezes. Seu propósito é isolar mensagens problemáticas e evitar que elas bloqueiem a fila principal.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>Um caso de uso para um Global Secondary Index (GSI) no DynamoDB.</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>Permite realizar consultas (`Query`) em atributos que não fazem parte da chave primária da tabela principal. Ele é útil para acessar dados de maneira diferente da chave principal, usando chaves de partição e de ordenação alternativas.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <h3>O que são 'Service Quotas' na AWS?</h3>
+                    </div>
+                    <div class="flashcard-back">
+                        <h3>São limites padrão definidos pela AWS para o uso de seus serviços. Por exemplo, o número máximo de instâncias EC2, ou o limite de requisições por segundo para uma API. Eles ajudam a prevenir abuso e proteger a estabilidade dos serviços.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
